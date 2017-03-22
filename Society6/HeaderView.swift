@@ -20,7 +20,6 @@ class HeaderView: UIView {
     
     var user: Header? {
         didSet {
-            print("update UI")
             updateUI()
         }
     }
@@ -43,7 +42,6 @@ class HeaderView: UIView {
             fullNameLabel.text = user.fullName
             userNameLabel.text = user.userName
             descritionLabel.text = user.description
-            print(descritionLabel.text , user.description)
         }
     }
     

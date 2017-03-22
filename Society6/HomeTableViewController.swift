@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Fusuma
 
 class HomeTableViewController: UITableViewController {
     
@@ -18,7 +19,6 @@ class HomeTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setPosts()
     }
 
@@ -75,4 +75,3 @@ class HomeTableViewController: UITableViewController {
     }
     
 }
-
