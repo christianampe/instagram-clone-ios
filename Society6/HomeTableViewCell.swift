@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class HomeTableViewCell: UITableViewCell {
     
@@ -24,7 +25,6 @@ class HomeTableViewCell: UITableViewCell {
     
     private func updateUI() {
         
-        // reset all attributes to nil
         imgView.image = nil
         userImage.image = nil
         title.text = nil
@@ -32,11 +32,26 @@ class HomeTableViewCell: UITableViewCell {
         likes.text = nil
         
         if let post = self.post {
-            imgView.image = UIImage(named: post.postImage.postURL)
-            userImage.image = UIImage(named: post.userImageURL)
-            title.text = post.title
-            userName.text = post.name
-            likes.text = String(describing: post.postImage.postLikes)
+
+            if let postFile = post.imageFile {
+                postFile.getDataInBackground { (data, error) in
+                    if let data = data {
+                        self.imgView.image = UIImage(data: data)!
+                    }
+                }
+            }
+            
+            if let profileImage = post.profileImage {
+                profileImage.getDataInBackground { (data, error) in
+                    if let data = data {
+                        self.userImage.image = UIImage(data: data)!
+                    }
+                }
+            }
+            
+            title.text = "ampechristian"
+            userName.text = post.description
+            likes.text = post.likers?.count.description
         }
     }
 }

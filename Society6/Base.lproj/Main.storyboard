@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--IG-->
+        <!--INSTAGANG-->
         <scene sceneID="lHI-bG-ECS">
             <objects>
                 <tableViewController id="JcC-8e-WH8" customClass="HomeTableViewController" customModule="Society6" customModuleProvider="target" sceneMemberID="viewController">
@@ -29,7 +29,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="492"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wgW-oc-kam">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wgW-oc-kam">
                                             <rect key="frame" x="0.0" y="50" width="375" height="353"/>
                                         </imageView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gUZ-eG-g5C">
@@ -216,8 +216,8 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="IG" id="7lN-2O-00f">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="Xta-44-aos">
+                    <navigationItem key="navigationItem" title="INSTAGANG" id="7lN-2O-00f">
+                        <barButtonItem key="rightBarButtonItem" id="Xta-44-aos">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="iPd-ue-vBp">
                                 <rect key="frame" x="276" y="7" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -246,12 +246,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="q9i-Qg-aqQ" customClass="NewImageView" customModule="Society6" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="64" width="375" height="175"/>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="q9i-Qg-aqQ" customClass="NewImageView" customModule="Society6" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="175" id="S29-jC-cs3"/>
-                                </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="dhA-h5-oQ4" appends="YES" id="3JF-s9-KbQ"/>
                                 </connections>
@@ -259,6 +257,9 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.75" contentMode="scaleToFill" text="Write a caption..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="45o-eO-S8t" customClass="ImageDescription" customModule="Society6" customModuleProvider="target">
                                 <rect key="frame" x="16" y="222" width="343" height="437"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="437" id="InG-MP-LeB"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <userDefinedRuntimeAttributes>
@@ -282,17 +283,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="q9i-Qg-aqQ" secondAttribute="trailing" id="4WW-9i-X24"/>
-                            <constraint firstItem="45o-eO-S8t" firstAttribute="top" secondItem="q9i-Qg-aqQ" secondAttribute="bottom" constant="-17" id="DI9-Yw-1TX"/>
-                            <constraint firstItem="q9i-Qg-aqQ" firstAttribute="top" secondItem="HDu-F2-xNT" secondAttribute="bottom" id="Es0-19-psX"/>
                             <constraint firstItem="scx-ja-VjF" firstAttribute="top" secondItem="45o-eO-S8t" secondAttribute="bottom" constant="8" id="RR5-p5-NDb"/>
                             <constraint firstItem="45o-eO-S8t" firstAttribute="leading" secondItem="ACk-eU-SPU" secondAttribute="leading" constant="16" id="ar2-cj-JCt"/>
                             <constraint firstAttribute="trailing" secondItem="45o-eO-S8t" secondAttribute="trailing" constant="16" id="n08-5P-YCg"/>
-                            <constraint firstItem="q9i-Qg-aqQ" firstAttribute="leading" secondItem="ACk-eU-SPU" secondAttribute="leading" id="v74-UO-iiU"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Create Post" id="I2q-br-LEq">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="23c-rE-qWb">
+                        <barButtonItem key="leftBarButtonItem" id="23c-rE-qWb">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dS0-4N-2zY">
                                 <rect key="frame" x="16" y="7" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -300,6 +297,17 @@
                                 <state key="normal" title="x"/>
                                 <connections>
                                     <action selector="cancelButtonTapped:" destination="adl-vK-Ia2" eventType="touchUpInside" id="9Ys-Y6-8KR"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" id="YKT-Qr-koo">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3Yx-ik-i4f">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="&gt;"/>
+                                <connections>
+                                    <action selector="sendButtonTapped:" destination="adl-vK-Ia2" eventType="touchUpInside" id="mFt-ZU-Zy0"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -375,7 +383,7 @@
                                         </constraints>
                                         <color key="textColor" red="0.20000000000000001" green="0.59999999999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" keyboardAppearance="alert" enablesReturnKeyAutomatically="YES"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="20"/>
@@ -389,7 +397,7 @@
                                         </constraints>
                                         <color key="textColor" red="0.20000000000000001" green="0.59999999999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" secureTextEntry="YES"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="20"/>
@@ -867,7 +875,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zLU-gv-skS" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="1fm-ZU-lMs">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1fm-ZU-lMs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

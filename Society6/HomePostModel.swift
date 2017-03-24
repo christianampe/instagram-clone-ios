@@ -7,35 +7,28 @@
 //
 
 import Foundation
+import Parse
 
-struct HomePostModel {
+class Post {
+   
+    var description: String?
+    var imageFile: PFFile?
+    var date: Date?
+    var likers: [PFUser]?
+    var commenters: [PFUser]?
+    var location: PFGeoPoint?
+    var user: PFUser?
+    var profileImage: PFFile?
     
-    var user: UserModel
-    var image: ImageModel
-    var data: HomePostDataModel
+    func create(description: String, imageFile: PFFile) {
+        self.description = description
+        self.imageFile = imageFile
+        self.date = Date()
+        self.likers = []
+        self.commenters = []
+        self.location = PFGeoPoint(latitude: 0.0, longitude: 0.0)
+        self.user = PFUser.current()!
+        self.profileImage = imageFile
+    }
     
-}
-
-struct HomePostDataModel {
-    
-    var date: Date
-    var likeCount: Int
-    var description: String
-    var location: (Int, Int)
-    
-}
-
-struct UserModel {
-    
-    var userName: String
-    var profileURL: String
-    
-}
-
-struct ImageModel {
-    
-    var imageURL: String
-    var height: Float
-    var width: Float
-
 }
