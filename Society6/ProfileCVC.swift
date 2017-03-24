@@ -45,7 +45,6 @@ class ProfileCVC: UICollectionViewController {
         if let likedCell = cell as? CollectionViewCell {
             likedCell.liked = like
         }
-        
         return cell
     }
     
@@ -56,7 +55,7 @@ class ProfileCVC: UICollectionViewController {
             headerView.user = headers
             return headerView
         default:
-            assert(false, "Unexpected element kind")
+            assert(false, "Invalid Kind")
         }
     }
     
@@ -67,7 +66,7 @@ class ProfileCVC: UICollectionViewController {
 
     private func loadBodyData() {
         let data = Liked(likeImage: "emma4")
-        liked = [[data,data,data,data,data,data,data,data,data,data,data,data,data,data,data,data,data,data,data,data,data,data,data,data,data,data,data,data,data,data,data,data,data,data,data,data]]
+        liked = [[data,data,data,data,data,data,data,data,data,data,data,data]]
     }
 }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="p3M-fs-T9L">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xTJ-Rj-0pM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -42,7 +42,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="80" height="34"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5PU-hS-RRy">
-                                                            <rect key="frame" x="0.0" y="0.0" width="21.5" height="34"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="21" height="34"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="image" keyPath="imageForSelected" value="likeselected"/>
                                                                 <userDefinedRuntimeAttribute type="image" keyPath="imageForNormal" value="likedeselected"/>
@@ -50,13 +50,13 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PZO-qY-QtC">
-                                                            <rect key="frame" x="29.5" y="0.0" width="21" height="34"/>
+                                                            <rect key="frame" x="29" y="0.0" width="22" height="34"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="image" keyPath="imageForNormal" value="comment"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jLc-KN-qew">
-                                                            <rect key="frame" x="58.5" y="0.0" width="21.5" height="34"/>
+                                                            <rect key="frame" x="59" y="0.0" width="21" height="34"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="image" keyPath="imageForNormal" value="bookmarkdeselected"/>
                                                                 <userDefinedRuntimeAttribute type="image" keyPath="imageForSelected" value="bookmarkselected"/>
@@ -70,22 +70,22 @@
                                                     </constraints>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="WKt-oI-UHS">
-                                                    <rect key="frame" x="0.0" y="34" width="84.5" height="49"/>
+                                                    <rect key="frame" x="0.0" y="34" width="85" height="49"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="438,129 Likes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUf-iB-i7v">
-                                                            <rect key="frame" x="0.0" y="0.0" width="84.5" height="16"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="85" height="16"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O2F-Pv-kiA">
-                                                            <rect key="frame" x="0.0" y="18" width="31" height="15.5"/>
+                                                            <rect key="frame" x="0.0" y="18" width="31" height="16"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9 hours ago" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfR-vo-Rx3">
-                                                            <rect key="frame" x="0.0" y="35.5" width="57" height="13.5"/>
+                                                            <rect key="frame" x="0.0" y="36" width="57" height="13"/>
                                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="10"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -450,8 +450,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="3cR-Fg-bNG" kind="relationship" relationship="viewControllers" id="dyo-TM-ojA"/>
-                        <segue destination="FyK-7t-kCq" kind="relationship" relationship="viewControllers" id="T57-96-zR2"/>
                         <segue destination="bZU-G1-Psh" kind="relationship" relationship="viewControllers" id="IfL-lv-5xB"/>
+                        <segue destination="oIe-Yv-7qr" kind="relationship" relationship="viewControllers" id="bK3-KF-1P2"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y10-g1-HjL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -462,7 +462,7 @@
         <scene sceneID="yOg-Q6-Yu2">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bZU-G1-Psh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="profiledeselect" selectedImage="profileselect" id="qKJ-TG-Jm6">
+                    <tabBarItem key="tabBarItem" title="" image="likedeselected" selectedImage="likeselected" id="qKJ-TG-Jm6">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="100"/>
                     </tabBarItem>
@@ -481,7 +481,7 @@
             </objects>
             <point key="canvasLocation" x="1049" y="-607"/>
         </scene>
-        <!--ampechristian-->
+        <!--notifications-->
         <scene sceneID="Zfm-xg-sg1">
             <objects>
                 <tableViewController id="SH5-Wy-y3E" sceneMemberID="viewController">
@@ -552,7 +552,7 @@
                             <outlet property="delegate" destination="SH5-Wy-y3E" id="7U3-k1-mhU"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="ampechristian" id="AOm-7A-NzB"/>
+                    <navigationItem key="navigationItem" title="notifications" id="AOm-7A-NzB"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0VL-sB-iR5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -576,28 +576,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rMT-ax-soy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2600.8000000000002" y="97.601199400299862"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="tdg-DZ-dZ1">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FyK-7t-kCq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="profiledeselect" selectedImage="profileselect" id="soZ-Jf-d9X">
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="100"/>
-                    </tabBarItem>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="F8y-ET-miz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="lx3-aZ-DBi" kind="relationship" relationship="rootViewController" id="4q2-np-nzV"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2Se-6L-z5m" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1049" y="-1345"/>
         </scene>
         <!--ampechristian-->
         <scene sceneID="4Gy-8J-1Kv">
@@ -792,11 +770,43 @@
                             <outlet property="delegate" destination="lx3-aZ-DBi" id="lrv-K5-YAe"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="ampechristian" id="G0t-ek-082"/>
+                    <navigationItem key="navigationItem" title="ampechristian" id="G0t-ek-082">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="ejL-Cf-TQr">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yjt-Ne-UEW">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                <state key="normal" title="Log Out"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nbr-YL-NPR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1773.5999999999999" y="-1345.2773613193403"/>
+            <point key="canvasLocation" x="1774" y="-1321"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="j95-3r-eQJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oIe-Yv-7qr" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="profiledeselect" selectedImage="profileselect" id="zYO-Rm-VgS">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="100"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9KY-zS-WE3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="lx3-aZ-DBi" kind="relationship" relationship="rootViewController" id="xjv-8D-7ry"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wUj-1y-afw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1049" y="-1321"/>
         </scene>
     </scenes>
     <resources>
@@ -810,8 +820,8 @@
         <image name="emma4" width="1920" height="1200"/>
         <image name="homedeselect" width="25" height="25"/>
         <image name="homeselect" width="25" height="25"/>
-        <image name="likedeselected" width="16" height="16"/>
-        <image name="likeselected" width="16" height="16"/>
+        <image name="likedeselected" width="25" height="25"/>
+        <image name="likeselected" width="25" height="25"/>
         <image name="profiledeselect" width="25" height="25"/>
         <image name="profileselect" width="25" height="25"/>
     </resources>
