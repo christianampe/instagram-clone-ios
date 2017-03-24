@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HeaderView: UIView {
+class HeaderView: UICollectionReusableView {
     
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var postCountLabel: UILabel!
@@ -35,6 +35,7 @@ class HeaderView: UIView {
         descritionLabel.text = nil
         
         if let user = self.user {
+            
             profileImageView.image = UIImage(named: user.image)
             postCountLabel.text = user.posts
             followerCountLabel.text = user.followers
@@ -42,6 +43,7 @@ class HeaderView: UIView {
             fullNameLabel.text = user.fullName
             userNameLabel.text = user.userName
             descritionLabel.text = user.description
+            
         }
     }
     

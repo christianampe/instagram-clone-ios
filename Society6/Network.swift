@@ -24,7 +24,7 @@ class Networking {
     
     public func post(imageData: UIImage, description: String) {
         let post = Post()
-        let image = PFFile(data: UIImageJPEGRepresentation(imageData, 0.5)!)
+        let image = PFFile(name: "post.jpg", data:  UIImageJPEGRepresentation(imageData, 0.25)!)
         post.create(description: description, imageFile: image!)
         sendToServer(post: post)
     }

@@ -13,16 +13,17 @@ class HomeTableViewController: UITableViewController {
     let network = Networking()
     
     var posts = [Post]() {
-        didSet { tableView.reloadData() }
+        didSet { tableView.reloadData(); refreshControl?.endRefreshing() }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        refresh()
         network.delegate = self
+        refreshControl?.addTarget(self, action:#selector(refresh), for: .valueChanged)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
+    @objc private func refresh() {
         network.fetch()
     }
     
@@ -43,6 +44,7 @@ class HomeTableViewController: UITableViewController {
         }
         return cell
     }
+    
 }
 
 extension HomeTableViewController: NetworkDelegate {

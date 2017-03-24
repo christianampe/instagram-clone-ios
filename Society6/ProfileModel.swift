@@ -1,5 +1,5 @@
 //
-//  ProfileModel.swift
+//  ActivityModel.swift
 //  Society6
 //
 //  Created by Ampe on 1/29/17.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Activity {
+struct ActivityModel {
     
     var userImageURL: String
     var userName: String

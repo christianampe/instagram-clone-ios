@@ -16,11 +16,11 @@ class HomeTableViewCell: UITableViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var likes: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var timeSince: UILabel!
     
     var post: Post? {
-        didSet {
-            updateUI()
-        }
+        didSet { updateUI() }
     }
     
     private func updateUI() {
@@ -30,6 +30,8 @@ class HomeTableViewCell: UITableViewCell {
         title.text = nil
         userName.text = nil
         likes.text = nil
+        descriptionLabel.text = nil
+        timeSince.text = nil
         
         if let post = self.post {
 
@@ -49,9 +51,45 @@ class HomeTableViewCell: UITableViewCell {
                 }
             }
             
-            title.text = "ampechristian"
-            userName.text = post.description
-            likes.text = post.likers?.count.description
+            if let userName = post.user {
+                userName.fetchIfNeededInBackground(block: { (data, error) in
+                    var email = data?["email"] as! String
+                    if let range = email.range(of: "@") {
+                        email.removeSubrange(range.lowerBound..<email.endIndex)
+                        self.title.text = email
+                    } 
+                })
+            }
+            
+            if let time = post.date {
+                var val: Int = 0
+                var string = ""
+                let sec = abs(time.timeIntervalSinceNow)
+                if (sec/60) < 60 {
+                    val = Int(sec/60)
+                    string = "minutes ago"
+                }
+                else if (sec/3600) < 24 {
+                    val = Int(sec/3600)
+                    string = "hours ago"
+                }
+                else {
+                    val = Int(sec/86400)
+                    string = "days ago"
+                }
+                timeSince.text = "Posted \(val.description) \(string)"
+            }
+            
+            userName.text = "Los Angeles"
+            
+            if let likeString = post.likers?.count.description {
+                likes.text = "\(likeString) likes"
+            }
+            
+            if let desc = post.description {
+                descriptionLabel.text = "\(desc)"
+            }
+            
         }
     }
 }
