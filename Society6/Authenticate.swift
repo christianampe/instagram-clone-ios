@@ -31,6 +31,15 @@ class AuthenticateViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        check()
+    }
+    
+    private func check() {
+        if PFUser.current() != nil { proceed() }
+    }
+    
     private func logIn() {
         view.endEditing(true)
         isEmpty(emailField: emailTextField, passwordField: passwordTextField)
@@ -55,10 +64,12 @@ class AuthenticateViewController: UIViewController {
         user.signUpInBackground {
             (succeeded: Bool, error: Error?) -> Void in
             if (error != nil) { self.shake(); self.color() }
-            else {
-                self.performSegue(withIdentifier: "tomain", sender: nil)
-            }
+            else { self.proceed() }
         }
+    }
+    
+    private func proceed() {
+        self.performSegue(withIdentifier: "tomain", sender: nil)
     }
     
     private func shake() {

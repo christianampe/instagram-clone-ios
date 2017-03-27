@@ -12,7 +12,7 @@ class CollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
     
-    var liked: Liked? {
+    var post: Post? {
         didSet {
             updateUI()
         }
@@ -22,8 +22,15 @@ class CollectionViewCell: UICollectionViewCell {
         
         imageView.image = nil
         
-        if let liked = self.liked {
-            imageView.image = UIImage(named: liked.likeImage)
+        if let post = self.post {
+            
+            if let postFile = post.imageFile {
+                postFile.getDataInBackground { (data, error) in
+                    if let data = data {
+                        self.imageView.image = UIImage(data: data)!
+                    }
+                }
+            }
         }
     }
     

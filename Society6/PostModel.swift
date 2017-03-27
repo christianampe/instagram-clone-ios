@@ -19,6 +19,7 @@ class Post {
     var location: PFGeoPoint?
     var user: PFUser?
     var profileImage: PFFile?
+    var id: String?
     
     func create(description: String, imageFile: PFFile) {
         self.description = description

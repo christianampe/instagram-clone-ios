@@ -9,15 +9,26 @@
 import UIKit
 import Parse
 
+protocol UserTappedDelegate: class {
+    func userTapped(user: PFUser)
+}
+
 class HomeTableViewCell: UITableViewCell {
     
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var userImage: UIImageView!
-    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var title: UIButton!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var likes: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var timeSince: UILabel!
+    
+    @IBAction func userSelected(_ sender: UIButton) {
+        guard let user = post?.user else { return }
+        delegate?.userTapped(user: user)
+    }
+    
+    weak var delegate: UserTappedDelegate?
     
     var post: Post? {
         didSet { updateUI() }
@@ -27,7 +38,7 @@ class HomeTableViewCell: UITableViewCell {
         
         imgView.image = nil
         userImage.image = nil
-        title.text = nil
+        title.setTitle(nil, for: [])
         userName.text = nil
         likes.text = nil
         descriptionLabel.text = nil
@@ -52,12 +63,12 @@ class HomeTableViewCell: UITableViewCell {
             }
             
             if let userName = post.user {
-                userName.fetchIfNeededInBackground(block: { (data, error) in
+                userName.fetchInBackground(block: { (data, error) in
                     var email = data?["email"] as! String
                     if let range = email.range(of: "@") {
                         email.removeSubrange(range.lowerBound..<email.endIndex)
-                        self.title.text = email
-                    } 
+                        self.title.setTitle(email, for: [])
+                    }
                 })
             }
             
