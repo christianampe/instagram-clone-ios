@@ -13,22 +13,22 @@ class HomeTableViewController: UITableViewController {
     
     let refresh = UIRefreshControl()
     
-    var posts = [Post]() { didSet { refresh.endRefreshing(); tableView.reloadData(); print(posts) } }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        Networking.sharedInstance.homeDelegate = self
-        setUp()
-    }
+    var posts = [Post]() { didSet { refresh.endRefreshing(); tableView.reloadData() } }
     
     private func setUp() {
-        self.navigationController?.navigationBar.topItem?.title = ""
+        Networking.sharedInstance.homeDelegate = self
         refresh.addTarget(self, action:#selector(reload), for: .valueChanged)
         tableView.addSubview(refresh)
     }
     
     @objc private func reload() {
+        print("reload")
         Networking.sharedInstance.fetch(className: "Posts", limit: 25)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setUp()
     }
     
     // MARK: - Data Source

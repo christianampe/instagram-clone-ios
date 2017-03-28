@@ -126,7 +126,7 @@
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MrH-Y2-JQR">
                                                                     <rect key="frame" x="0.0" y="0.0" width="281" height="20"/>
-                                                                    <state key="normal" title=":"/>
+                                                                    <state key="normal" title="ampechristian"/>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="color" keyPath="titleColorForDisabled">
                                                                             <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -145,7 +145,7 @@
                                                                         <action selector="userSelected:" destination="7bB-RO-9Eg" eventType="touchUpInside" id="gRM-b2-yuA"/>
                                                                     </connections>
                                                                 </button>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Christian Ampe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EBb-04-EkG">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Irvine" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EBb-04-EkG">
                                                                     <rect key="frame" x="0.0" y="20" width="281" height="14"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
                                                                     <nil key="textColor"/>
@@ -199,6 +199,7 @@
                         </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" title="Explore" id="7lN-2O-00f">
+                        <barButtonItem key="backBarButtonItem" title=" " id="BXb-gG-1sm"/>
                         <barButtonItem key="rightBarButtonItem" id="Xta-44-aos">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="iPd-ue-vBp">
                                 <rect key="frame" x="276" y="7" width="83" height="30"/>
@@ -446,10 +447,10 @@
             </objects>
             <point key="canvasLocation" x="-578.39999999999998" y="97.601199400299862"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar-->
         <scene sceneID="Lzt-Zz-RCs">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="p3M-fs-T9L" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="p3M-fs-T9L" customClass="TabBar" customModule="Society6" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="hVg-km-Hck">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -563,7 +564,9 @@
                             <outlet property="delegate" destination="SH5-Wy-y3E" id="7U3-k1-mhU"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="notifications" id="AOm-7A-NzB"/>
+                    <navigationItem key="navigationItem" title="notifications" id="AOm-7A-NzB">
+                        <barButtonItem key="backBarButtonItem" title=" " id="qx2-jN-p3K"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0VL-sB-iR5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -782,6 +785,7 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="ampechristian" id="G0t-ek-082">
+                        <barButtonItem key="backBarButtonItem" title=" " id="Zz1-kZ-M5X"/>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="ejL-Cf-TQr">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yjt-Ne-UEW">
                                 <rect key="frame" x="276" y="7" width="83" height="30"/>

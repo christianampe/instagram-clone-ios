@@ -15,11 +15,10 @@ class ProfileCVC: UICollectionViewController {
     let refreshControl = UIRefreshControl()
     
     var profile = PFUser() { didSet { refresh(); setConstant() } }
-    var posts = [Post]() { didSet { collectionView?.reloadData(); refreshControl.endRefreshing(); print("reload") } }
+    var posts = [Post]() { didSet { collectionView?.reloadData(); refreshControl.endRefreshing(); } }
     var headers: Header? { didSet { collectionView?.reloadData() } }
     
     private func setUp() {
-        self.navigationController?.navigationBar.topItem?.title = ""
         refreshControl.addTarget(self, action:#selector(refresh), for: .valueChanged)
         collectionView?.addSubview(refreshControl)
     }
@@ -44,11 +43,6 @@ class ProfileCVC: UICollectionViewController {
         Networking.sharedInstance.profileDelegate = self
         loadHeaderData()
         setUp()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-        collectionView?.reloadData()
     }
     
     // MARK: - Data Source

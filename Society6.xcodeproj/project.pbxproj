@@ -27,6 +27,7 @@
 		BF7C70001E3C65A8007D2D82 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7C6FFF1E3C65A8007D2D82 /* ProfileCell.swift */; };
 		BFA9B7FC1E82CC7800CF1150 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA9B7FB1E82CC7800CF1150 /* PostModel.swift */; };
 		BFA9B8011E82DEB000CF1150 /* Authenticate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA9B8001E82DEB000CF1150 /* Authenticate.swift */; };
+		BFF1A0661E89E9D5004C0D04 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF1A0651E89E9D5004C0D04 /* TabBar.swift */; };
 		C58BA1B4292FE3800EBFDC28 /* Pods_Society6UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57884E228986678D1ABACDD1 /* Pods_Society6UITests.framework */; };
 		C93C3A818AA1C4622C7ADF48 /* Pods_Society6.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 055ECD389A69B64C0348DD50 /* Pods_Society6.framework */; };
 /* End PBXBuildFile section */
@@ -83,6 +84,7 @@
 		BF7C6FFF1E3C65A8007D2D82 /* ProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		BFA9B7FB1E82CC7800CF1150 /* PostModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		BFA9B8001E82DEB000CF1150 /* Authenticate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authenticate.swift; sourceTree = "<group>"; };
+		BFF1A0651E89E9D5004C0D04 /* TabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 		BF0FD8961E88510D0004F5A4 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				BFF1A0641E89E9B8004C0D04 /* Tab Bar */,
 				BF74C1F21E833059006331F3 /* Networking */,
 				BF16CD971E82E5B0006B296D /* Animations */,
 			);
@@ -250,6 +253,14 @@
 				BF5F7F3D1E3AFE96009189CE /* LaunchScreen.storyboard */,
 			);
 			name = Interface;
+			sourceTree = "<group>";
+		};
+		BFF1A0641E89E9B8004C0D04 /* Tab Bar */ = {
+			isa = PBXGroup;
+			children = (
+				BFF1A0651E89E9D5004C0D04 /* TabBar.swift */,
+			);
+			name = "Tab Bar";
 			sourceTree = "<group>";
 		};
 		DD00EE5B08263F600DED00A2 /* Pods */ = {
@@ -558,6 +569,7 @@
 				BF5F7F631E3B0770009189CE /* Home.swift in Sources */,
 				BF7854901E3D516900C79FAB /* HomeCell.swift in Sources */,
 				BFA9B8011E82DEB000CF1150 /* Authenticate.swift in Sources */,
+				BFF1A0661E89E9D5004C0D04 /* TabBar.swift in Sources */,
 				BF74C1F11E831A6E006331F3 /* Colorable.swift in Sources */,
 				BF5F7F3A1E3AFE96009189CE /* Society6.xcdatamodeld in Sources */,
 				BF16CD991E82E5BE006B296D /* Shakeable.swift in Sources */,

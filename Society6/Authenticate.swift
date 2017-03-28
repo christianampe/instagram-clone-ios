@@ -31,17 +31,13 @@ class AuthenticateViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        check()
-    }
-    
     private func check() {
         if PFUser.current() != nil { proceed() }
     }
     
     private func logIn() {
         view.endEditing(true)
+        check()
         isEmpty(emailField: emailTextField, passwordField: passwordTextField)
     }
     

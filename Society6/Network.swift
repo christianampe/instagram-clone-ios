@@ -52,15 +52,18 @@ class Networking {
     
     public func fetchProfilePosts(user: PFUser) {
         if let posts = user.object(forKey: "postId") as? [PFObject] {
+            let count = posts.count
             var fetchedPosts = [PFObject]()
             for post in posts {
-                post.fetchIfNeededInBackground{ (post, error) in
+                post.fetchIfNeededInBackground { (post, error) in
                     if let pst = post {
                         fetchedPosts.append(pst)
                     }
+                    if count == fetchedPosts.count {
+                        self.profile = self.map(objects: fetchedPosts)
+                    }
                 }
             }
-            self.profile = self.map(objects: fetchedPosts)
         }
     }
     
