@@ -12,7 +12,7 @@ import Parse
 class HomeTableViewController: UITableViewController {
     
     let refresh = UIRefreshControl()
-    
+
     var posts = [Post]() { didSet { refresh.endRefreshing(); tableView.reloadData() } }
     
     private func setUp() {
@@ -22,7 +22,10 @@ class HomeTableViewController: UITableViewController {
     }
     
     @objc private func reload() {
-        print("reload")
+        if posts.count == 1 {
+            refresh.endRefreshing()
+            return
+        }
         Networking.sharedInstance.fetch(className: "Posts", limit: 25)
     }
     
