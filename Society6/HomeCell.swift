@@ -62,12 +62,10 @@ class HomeTableViewCell: UITableViewCell {
                 }
             }
             
-            if let userName = post.user {
-                userName.fetchInBackground(block: { (data, error) in
-                    var email = data?["email"] as! String
-                    if let range = email.range(of: "@") {
-                        email.removeSubrange(range.lowerBound..<email.endIndex)
-                        self.title.setTitle(email, for: [])
+            if let user = post.user {
+                user.fetchIfNeededInBackground(block: { (usr, err) in
+                    if let username = usr?["username"] as? String {
+                        self.title.setTitle(username, for: [])
                     }
                 })
             }

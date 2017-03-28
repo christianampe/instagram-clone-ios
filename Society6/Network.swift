@@ -15,6 +15,7 @@ protocol HomeNetworkDelegate: class {
 
 protocol ProfileNetworkDelegate: class {
     func didFetchProfile(posts: [Post])
+    func didFetchHeaderData(header: Header)
 }
 
 class Networking {
@@ -30,6 +31,10 @@ class Networking {
     
     var profile = [Post]() {
         didSet { profileDelegate?.didFetchProfile(posts: profile) }
+    }
+    
+    var header = Header() {
+        didSet { profileDelegate?.didFetchHeaderData(header: header) }
     }
     
     public func post(imageData: UIImage, description: String) {
@@ -51,7 +56,7 @@ class Networking {
     }
     
     public func fetchProfilePosts(user: PFUser) {
-        if let posts = user.object(forKey: "postId") as? [PFObject] {
+        if let posts = user.object(forKey: "posts") as? [PFObject] {
             let count = posts.count
             var fetchedPosts = [PFObject]()
             for post in posts {
@@ -63,6 +68,23 @@ class Networking {
                         self.profile = self.map(objects: fetchedPosts)
                     }
                 }
+            }
+        }
+    }
+    
+    public func fetchHeaderData(user: PFUser) {
+        user.fetchInBackground { (usr, err) in
+            if let user = usr {
+                let header = Header()
+//                header.image = user["profile_image"] as! PFFile?
+//                header.description = user["description"] as! String?
+                header.fullName = "Christian R. Ampe"
+                header.description = "Water polo player from OC -> LA"
+                header.posts = user["posts"] as? [PFObject]
+                header.following = user["following"] as? [PFUser]
+                header.followers = user["followers"] as? [PFUser]
+                header.userName = user["username"] as? String
+                self.header = header
             }
         }
     }
@@ -84,7 +106,7 @@ class Networking {
     
     private func updateUser(postFile: PFObject) {
         if let currentUser = PFUser.current() {
-            currentUser.addUniqueObject(postFile, forKey: "postId")
+            currentUser.addUniqueObject(postFile, forKey: "posts")
             currentUser.saveInBackground {
                 (success: Bool, error: Error?) -> Void in
             }

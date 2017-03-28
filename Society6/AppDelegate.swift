@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        // Server Initalization
         let configuration = ParseClientConfiguration {
             $0.applicationId = "AaDKtUwi16SDcpXzDm5TZ1JWnVXPW8EHskgwYrO1"
             $0.clientKey = "BZgIpkaOhnb7TUyhROATUjJ7gWBZ2Sy5LPc7m1IK"

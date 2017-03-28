@@ -18,7 +18,7 @@ class HeaderView: UICollectionReusableView {
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var descritionLabel: UILabel!
     
-    var user: Header? {
+    var header: Header? {
         didSet {
             updateUI()
         }
@@ -34,15 +34,26 @@ class HeaderView: UICollectionReusableView {
         userNameLabel.text = nil
         descritionLabel.text = nil
         
-        if let user = self.user {
+        if let header = self.header {
             
-            profileImageView.image = UIImage(named: user.image)
-            postCountLabel.text = user.posts
-            followerCountLabel.text = user.followers
-            followingCountLabel.text = user.following
-            fullNameLabel.text = user.fullName
-            userNameLabel.text = user.userName
-            descritionLabel.text = user.description
+            if let postFile = header.image {
+                postFile.getDataInBackground { (data, error) in
+                    if let data = data {
+                        self.profileImageView.image = UIImage(data: data)!
+                    }
+                }
+            }
+            
+            postCountLabel.text = header.posts?.count.description
+            followerCountLabel.text = header.followers?.count.description
+            followingCountLabel.text = header.following?.count.description
+            fullNameLabel.text = header.fullName
+            
+            if let usrnm = header.userName {
+                userNameLabel.text = "@\(usrnm)"
+            }
+            
+            descritionLabel.text = header.description
             
         }
     }

@@ -7,15 +7,16 @@
 //
 
 import Foundation
+import Parse
 
-struct Header {
+class Header {
     
-    var image: String
-    var posts: String
-    var followers: String
-    var following: String
-    var fullName: String
-    var userName: String
-    var description: String
+    var image: PFFile?
+    var posts: [PFObject]?
+    var followers: [PFUser]?
+    var following: [PFUser]?
+    var fullName: String?
+    var userName: String?
+    var description: String?
     
 }

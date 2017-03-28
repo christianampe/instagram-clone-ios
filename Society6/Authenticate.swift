@@ -52,16 +52,28 @@ class AuthenticateViewController: UIViewController {
         createNewUser(email: emailTextField.text, password: passwordTextField.text)
     }
     
+    // TODO: - Move To Networking
     private func createNewUser(email: String?, password: String?) {
         let user = PFUser()
-        user.username = email
         user.email = email
         user.password = password
+        user.username = createUserName(email: email!)
+        user["posts"] = []
+        user["followers"] = []
+        user["following"] = []
         user.signUpInBackground {
             (succeeded: Bool, error: Error?) -> Void in
             if (error != nil) { self.shake(); self.color() }
             else { self.proceed() }
         }
+    }
+    
+    private func createUserName(email: String) -> String {
+        var username = email
+        if let range = username.range(of: "@") {
+            username.removeSubrange(range.lowerBound..<username.endIndex)
+        }
+        return username
     }
     
     private func proceed() {

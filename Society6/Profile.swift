@@ -15,10 +15,11 @@ class ProfileCVC: UICollectionViewController {
     let refreshControl = UIRefreshControl()
     
     var profile = PFUser() { didSet { refresh(); setConstant() } }
-    var posts = [Post]() { didSet { collectionView?.reloadData(); refreshControl.endRefreshing(); } }
-    var headers: Header? { didSet { collectionView?.reloadData() } }
+    var posts = [Post]() { didSet { collectionView?.reloadData(); refreshControl.endRefreshing() } }
+    var header = Header() { didSet { collectionView?.reloadData() } }
     
     private func setUp() {
+        Networking.sharedInstance.profileDelegate = self
         refreshControl.addTarget(self, action:#selector(refresh), for: .valueChanged)
         collectionView?.addSubview(refreshControl)
     }
@@ -36,12 +37,11 @@ class ProfileCVC: UICollectionViewController {
     
     @objc private func refresh() {
         Networking.sharedInstance.fetchProfilePosts(user: profile)
+        Networking.sharedInstance.fetchHeaderData(user: profile)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Networking.sharedInstance.profileDelegate = self
-        loadHeaderData()
         setUp()
     }
     
@@ -77,16 +77,11 @@ class ProfileCVC: UICollectionViewController {
         switch kind {
         case UICollectionElementKindSectionHeader:
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerview", for: indexPath) as! HeaderView
-            headerView.user = headers
+            headerView.header = header
             return headerView
         default:
             assert(false, "Invalid Kind")
         }
-    }
-    
-    private func loadHeaderData() {
-        let header = Header(image: "emma4", posts: "2224", followers: "32.4K", following: "1.11K", fullName: "Christian R. Ampe", userName: "@christianampe", description: "water polo & piano player from the OC -> LA")
-        headers = header
     }
 }
 
@@ -100,4 +95,5 @@ extension ProfileCVC: UICollectionViewDelegateFlowLayout {
 
 extension ProfileCVC: ProfileNetworkDelegate {
     func didFetchProfile(posts: [Post]) { self.posts = posts }
+    func didFetchHeaderData(header: Header) { self.header = header  }
 }
