@@ -22,9 +22,7 @@ class TabBar: UITabBarController {
         if item == (self.tabBar.items?[0]) {
             networking.fetch(className: "Posts", limit: 25)
         }
-        if item == (self.tabBar.items?[1]) {
-
-        }
+        if item == (self.tabBar.items?[1]) { }
         if item == (self.tabBar.items?[2]) {
             networking.fetchProfilePosts(user: PFUser.current()!)
             networking.fetchHeaderData(user: PFUser.current()!)
