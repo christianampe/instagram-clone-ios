@@ -45,11 +45,13 @@ class HomeTableViewCell: UITableViewCell {
         timeSince.text = nil
         
         if let post = self.post {
-
+            
             if let postFile = post.imageFile {
                 postFile.getDataInBackground { (data, error) in
                     if let data = data {
-                        self.imgView.image = UIImage(data: data)!
+                        if let image = UIImage(data: data) {
+                            self.imgView.image = image
+                        }
                     }
                 }
             }
@@ -57,7 +59,9 @@ class HomeTableViewCell: UITableViewCell {
             if let profileImage = post.profileImage {
                 profileImage.getDataInBackground { (data, error) in
                     if let data = data {
-                        self.userImage.image = UIImage(data: data)!
+                        if let image = UIImage(data: data) {
+                            self.userImage.image = image
+                        }
                     }
                 }
             }
